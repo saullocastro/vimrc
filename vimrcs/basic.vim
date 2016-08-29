@@ -103,8 +103,8 @@ set hid
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-" Ignore case when searching
-set ignorecase
+" Not ignore case when searching
+set noignorecase
 
 " When searching try to be smart about cases 
 set smartcase
@@ -186,9 +186,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Linebreak on 500 characters
+" Linebreak on 79 characters
 set lbr
-set tw=500
+set textwidth=79
 
 set ai "Auto indent
 set si "Smart indent
@@ -296,6 +296,7 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.pyx :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
